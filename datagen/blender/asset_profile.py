@@ -1,8 +1,16 @@
-# Translation logic for assets to continuous feature profiles (Descriptor Vectors)
+# Mapping categorical assets to continuous semantic descriptors
+# Head Hair Triad: [length, volume, curliness]
+HAIR_PROFILES = {
+    "elvs_katherine_hair": [0.7, 0.4, 0.2],
+    "elvs_micky_afro": [0.4, 1.0, 1.0],
+    "ponytail01": [0.8, 0.5, 0.1],
+    "short01": [0.2, 0.2, 0.1],
+    "long01": [0.9, 0.4, 0.2],
+    "elvs_long_loose_curls": [0.8, 0.7, 0.6],
+    "none": [0.0, 0.0, 0.0]
+}
 
-# Each asset category maps to a 3-float vector [v0, v1, v2]
-
-# Facial Hair Triad: [mustache_density, beard_density, connection]
+# Beard Triad: [possession, volume, curliness]
 BEARD_PROFILES = {
     "culturalibre_faun_beard": [0.0, 0.5, 0.0],
     "grinsegold_beard_sigmund_wip": [1.0, 1.0, 1.0],
@@ -30,50 +38,49 @@ GLASSES_PROFILES = {
     "none": [0.0, 0.0, 0.0]
 }
 
-# Head Hair Triad: [length, volume, curliness]
-HAIR_PROFILES = {
-    "elvs_katherine_hair": [0.7, 0.4, 0.2],
-    "elvs_micky_afro": [0.4, 1.0, 1.0],
-    "ponytail01": [0.8, 0.5, 0.1],
-    "short01": [0.2, 0.2, 0.1],
-    "long01": [0.9, 0.4, 0.2],
-    "elvs_long_loose_curls": [0.8, 0.7, 0.6],
-    "none": [0.0, 0.0, 0.0]
-}
-
 def get_asset_vector(category, asset_name):
     """Returns the 3-float vector for a given asset name using heuristics for unknown names."""
     if not asset_name or asset_name.lower() == "none":
         return [0.0, 0.0, 0.0]
     
     if category == "beard":
-        return BEARD_PROFILES.get(asset_name, [0.5, 0.5, 0.0]) # Default middle
+        return BEARD_PROFILES.get(asset_name, [0.5, 0.5, 0.0])
     
     if category == "glasses":
-        return GLASSES_PROFILES.get(asset_name, [1.0, 0.5, 0.5]) # Default presence
+        return GLASSES_PROFILES.get(asset_name, [1.0, 0.5, 0.5])
         
     if category == "hair":
         if asset_name in HAIR_PROFILES:
             return HAIR_PROFILES[asset_name]
             
-        # Heuristics for the 56 hairstyles
+        # Heuristics for the library
         low_name = asset_name.lower()
         length, volume, curliness = 0.5, 0.5, 0.0
-        
-        # Length
         if any(w in low_name for w in ["long", "braid", "ponytail", "bun"]): length = 0.8
         if any(w in low_name for w in ["short", "buzz", "pixie"]): length = 0.2
         if "bald" in low_name: length = 0.0
-        
-        # Volume
         if any(w in low_name for w in ["afro", "updo", "bob", "cloud"]): volume = 0.9
-        if any(w in low_name for w in ["flat", "straight", "thin"]): volume = 0.2
-        
-        # Curliness
         if any(w in low_name for w in ["curly", "coily", "kinky", "afro"]): curliness = 1.0
         if any(w in low_name for w in ["wavy"]): curliness = 0.5
-        if any(w in low_name for w in ["straight", "bob"]): curliness = 0.0
         
         return [length, volume, curliness]
     
+    if category == "eyebrows":
+        # Eyebrows Triad: [possession, thickness, arch]
+        low_name = (asset_name or "").lower()
+        pos, thick, arch = (1.0, 0.5, 0.5) if asset_name else (0.0, 0.0, 0.0)
+        if "thick" in low_name: thick = 0.8
+        if "thin" in low_name: thick = 0.2
+        if "arch" in low_name: arch = 0.8
+        return [pos, thick, arch]
+
+    if category == "eyelashes":
+        # Eyelashes Triad: [possession, length, volume]
+        low_name = (asset_name or "").lower()
+        pos, length, vol = (1.0, 0.5, 0.5) if asset_name else (0.0, 0.0, 0.0)
+        if "long" in low_name: length = 0.8
+        if "short" in low_name: length = 0.2
+        if "full" in low_name or "vol" in low_name: vol = 0.8
+        return [pos, length, vol]
+
     return [0.0, 0.0, 0.0]

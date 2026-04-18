@@ -1,0 +1,492 @@
+{
+    "elvs_braid_bun": [
+        0.018,
+        0.036,
+        0.091
+    ],
+    "bob01": [
+        0.273,
+        0.055,
+        0.273
+    ],
+    "short02": [
+        0.291,
+        0.473,
+        0.309
+    ],
+    "sonntag78_blond_with_headband": [
+        0.0,
+        0.455,
+        0.0
+    ],
+    "braid01": [
+        0.055,
+        0.527,
+        0.109
+    ],
+    "cortu_straight_bangs": [
+        0.309,
+        0.273,
+        0.618
+    ],
+    "short04": [
+        0.327,
+        0.564,
+        0.018
+    ],
+    "short03": [
+        0.345,
+        0.436,
+        0.327
+    ],
+    "toigo_inverted_bob": [
+        0.091,
+        0.582,
+        0.345
+    ],
+    "culturalibre_hair_01": [
+        0.036,
+        0.636,
+        0.255
+    ],
+    "culturalibre_hair_06": [
+        0.655,
+        0.655,
+        0.545
+    ],
+    "toigo_blunt_bob": [
+        0.127,
+        0.327,
+        0.655
+    ],
+    "elvs_maxwell_hair": [
+        0.709,
+        0.691,
+        0.818
+    ],
+    "toigo_curled_under_bob_with_bangs": [
+        0.2,
+        0.418,
+        0.291
+    ],
+    "elvs_short_side_do": [
+        0.582,
+        0.745,
+        0.636
+    ],
+    "cortu_strawberry_cloud_hair": [
+        0.964,
+        0.618,
+        0.527
+    ],
+    "elvs_unkempt_french_braid": [
+        0.473,
+        0.145,
+        0.509
+    ],
+    "elvs_grump_hair": [
+        0.891,
+        0.673,
+        0.491
+    ],
+    "elvs_reverse_french_braid_bun": [
+        0.455,
+        0.491,
+        0.473
+    ],
+    "elvs_short_daisy_hair": [
+        0.218,
+        0.764,
+        0.673
+    ],
+    "elvs_ashley_may_hair": [
+        0.236,
+        0.345,
+        0.127
+    ],
+    "o4saken_long01": [
+        0.436,
+        0.727,
+        0.582
+    ],
+    "sonntag78_junglebook_hair": [
+        0.509,
+        0.855,
+        0.691
+    ],
+    "short01": [
+        0.673,
+        0.782,
+        0.836
+    ],
+    "cortu_shaggy_green_hair": [
+        1.0,
+        0.291,
+        0.855
+    ],
+    "elvs_that_80s_babe_hair": [
+        0.545,
+        0.509,
+        0.2
+    ],
+    "toigo_blunt_bob_with_bangs": [
+        0.255,
+        0.4,
+        0.873
+    ],
+    "elvs_island_princess_hair": [
+        0.782,
+        0.873,
+        0.218
+    ],
+    "bob02": [
+        0.982,
+        0.127,
+        0.8
+    ],
+    "elvs_lady_hippy_hair": [
+        0.8,
+        0.6,
+        0.909
+    ],
+    "elvs_micky_afro": [
+        0.109,
+        0.364,
+        0.382
+    ],
+    "elvs_adrienne_hair": [
+        0.927,
+        0.164,
+        0.927
+    ],
+    "elvs_braided_rows": [
+        0.164,
+        0.382,
+        0.145
+    ],
+    "elvs_wavy_bob": [
+        0.564,
+        0.818,
+        0.709
+    ],
+    "faydaen_hair_1": [
+        0.527,
+        0.8,
+        0.764
+    ],
+    "learning_anime_hair": [
+        0.418,
+        0.255,
+        0.745
+    ],
+    "cortu_short_messy_hair": [
+        0.182,
+        0.109,
+        0.727
+    ],
+    "elvs_double_mh_braid": [
+        0.909,
+        0.218,
+        0.055
+    ],
+    "culturalibre_hair_05": [
+        0.073,
+        0.309,
+        0.164
+    ],
+    "culturalibre_hair_02": [
+        0.4,
+        0.545,
+        0.182
+    ],
+    "ponytail01": [
+        0.382,
+        0.836,
+        0.564
+    ],
+    "afro01": [
+        0.764,
+        0.018,
+        0.455
+    ],
+    "elvs_katherine_hair": [
+        0.836,
+        0.2,
+        0.4
+    ],
+    "littleright_bobcut_hair": [
+        0.364,
+        0.909,
+        0.364
+    ],
+    "elvs_keylth_hair": [
+        0.818,
+        0.073,
+        0.418
+    ],
+    "long01": [
+        0.145,
+        0.927,
+        0.982
+    ],
+    "elvs_daisy_hair": [
+        0.636,
+        0.891,
+        0.6
+    ],
+    "elvs_witchy_lil_bob": [
+        0.691,
+        0.709,
+        0.964
+    ],
+    "toigo_curled_under_bob": [
+        0.491,
+        0.964,
+        0.945
+    ],
+    "elvs_inverted_curly_bob": [
+        0.855,
+        0.0,
+        0.073
+    ],
+    "elvs_french_braid_variation": [
+        0.727,
+        0.182,
+        1.0
+    ],
+    "toigo_inverted_bob_with_bangs": [
+        0.945,
+        0.982,
+        0.891
+    ],
+    "elvs_hazel_hair": [
+        0.618,
+        1.0,
+        0.436
+    ],
+    "rehmanpolanski_hair_bun_brown": [
+        0.745,
+        0.945,
+        0.782
+    ],
+    "elvs_50s_updo": [
+        0.6,
+        0.091,
+        0.036
+    ],
+    "elvs_lara_hair": [
+        0.873,
+        0.236,
+        0.236
+    ],
+    "bob01_diffuse": [
+        0.7,
+        0.4,
+        0.2
+    ],
+    "short02_diffuse": [
+        0.7,
+        0.4,
+        0.2
+    ],
+    "short02_normal": [
+        0.7,
+        0.4,
+        0.2
+    ],
+    "untitledv3": [
+        0.7,
+        0.4,
+        0.2
+    ],
+    "blondbump": [
+        0.7,
+        0.4,
+        0.2
+    ],
+    "braid01_diffuse": [
+        0.1,
+        0.4,
+        0.7
+    ],
+    "straight_bangs_diff": [
+        0.7,
+        0.4,
+        0.2
+    ],
+    "straight_bangs_objnorm": [
+        0.1,
+        0.4,
+        0.7
+    ],
+    "short04_diffuse": [
+        0.1,
+        0.5,
+        0.7
+    ],
+    "short03_diffuse": [
+        0.7,
+        0.4,
+        0.2
+    ],
+    "BakedHairNORMAL": [
+        0.1,
+        0.4,
+        0.7
+    ],
+    "eyebrow011": [
+        0.0,
+        0.091,
+        0.0
+    ],
+    "eyebrow010": [
+        0.091,
+        0.182,
+        0.091
+    ],
+    "eyebrow003": [
+        0.727,
+        0.818,
+        0.273
+    ],
+    "eyebrow004": [
+        0.455,
+        0.727,
+        0.727
+    ],
+    "eyebrow005": [
+        0.545,
+        0.636,
+        0.636
+    ],
+    "eyebrow002": [
+        0.909,
+        0.909,
+        0.818
+    ],
+    "eyebrow012": [
+        0.636,
+        0.0,
+        0.364
+    ],
+    "eyebrow009": [
+        0.364,
+        0.455,
+        0.455
+    ],
+    "eyebrow007": [
+        1.0,
+        0.273,
+        0.909
+    ],
+    "eyebrow001": [
+        0.818,
+        1.0,
+        1.0
+    ],
+    "eyebrow006": [
+        0.273,
+        0.364,
+        0.545
+    ],
+    "eyebrow008": [
+        0.182,
+        0.545,
+        0.182
+    ],
+    "grinsegold_moustache": [
+        1.0,
+        0.5,
+        0.125
+    ],
+    "culturalibre_faun_beard": [
+        0.875,
+        0.875,
+        0.25
+    ],
+    "wdg_scruffy_beard": [
+        0.75,
+        0.125,
+        0.5
+    ],
+    "culturalibre_dal_moustache": [
+        0.625,
+        1.0,
+        0.75
+    ],
+    "elvs_scruffy_beard1": [
+        0.5,
+        0.625,
+        0.375
+    ],
+    "rehmanpolanski_beard_viking": [
+        0.25,
+        0.25,
+        0.0
+    ],
+    "grinsegold_full_beard": [
+        0.0,
+        0.0,
+        0.875
+    ],
+    "grinsegold_beard_sigmund_wip": [
+        0.125,
+        0.75,
+        0.625
+    ],
+    "rehmanpolanski_moustache_viking": [
+        0.375,
+        0.375,
+        1.0
+    ],
+    "spamrakuen_sagerfrogs_glasses_01": [
+        0.0,
+        0.778,
+        0.444
+    ],
+    "culturalibre_doc_ock_glasses": [
+        0.556,
+        0.667,
+        1.0
+    ],
+    "spamrakuen_tbm_glasses_frames_01": [
+        0.111,
+        0.444,
+        0.0
+    ],
+    "spamrakuen_sagerfrogs_glasses_02": [
+        0.444,
+        0.333,
+        0.111
+    ],
+    "spamrakuen_sagerfrogs_glasses_04": [
+        0.333,
+        0.222,
+        0.222
+    ],
+    "spamrakuen_sagerfrogs_glasses_03": [
+        0.667,
+        0.889,
+        0.556
+    ],
+    "frankyaye_glasses_library_male": [
+        0.889,
+        0.556,
+        0.667
+    ],
+    "ews_3d_glasses": [
+        1.0,
+        0.111,
+        0.889
+    ],
+    "kwnet_at_optical_glasses": [
+        0.778,
+        1.0,
+        0.333
+    ],
+    "toigo_round_glasses_leopard": [
+        0.222,
+        0.0,
+        0.778
+    ]
+}

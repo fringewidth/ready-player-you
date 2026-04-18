@@ -1,0 +1,3 @@
+*.exr
+datagen/assets/hdris/
+.venv/**

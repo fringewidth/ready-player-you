@@ -106,8 +106,18 @@ The baseline lighting in `prototype.blend` may be insufficient for synthetic dat
 *   **Avoid Asset IDs**: Predicting discrete IDs as floats (e.g., `0.7` for ID 7) fails because it implies a false spatial relationship between assets.
 *   **Semantic Descriptor Groups**:
     *   **Face_Hair_3**: [mush, beard, connection]
-    *   **Head_Hair_3**: [length, volume, curliness]
-    *   **Glasses_3**: [possession, roundness, thickness]
     *   **Colors_6**: [Scalp RGB (3), Non-Scalp RGB (3)]
+    *   **Cam_Pose_6**: [Selfie Yaw/Pitch/Roll, Body Yaw/Pitch/Roll]
     *   **Feature Alignment**: DINO learns visual features (texture/shape) rather than abstract IDs.
     *   **Graceful Degress**: Model mistakes result in "visually similar" assets rather than random ID jumps.
+
+## 8. Realism & Correlation Rules
+
+*   **Gender-Beard Correlation**: Facial hair (beards/mush) is only applied when `gender > 0.6` (Masculine).
+*   **Gender-Macro Correlation**: Biological consistency is enforced. Characters with `gender > 0.6` (Masculine) are restricted to `cupsize < 0.1`.
+*   **Age-Hair correlation**: "Natural" hair colors like Gray and White are restricted to elderly phenotypes (`age > 0.75`).
+*   **Probability Distribution**:
+    *   **Glasses**: ~10% occurrence.
+    *   **Beards**: ~25% of masculine phenotypes.
+    *   **Exotic Colors**: ~10% occurrence.
+*   **Framing (Body A-Pose)**: Target distance set to **6.0m** to guarantee full-body coverage (head-to-toe) across the entire 24mm-85mm focal range.
