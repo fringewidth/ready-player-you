@@ -145,6 +145,15 @@ def main():
                 ("thickness", "Which eyebrows are thicker?"),
                 ("arch", "Which eyebrows have a higher arch?")
             ]
+        },
+        "eyelashes": {
+            "folder": "eyelashes",
+            "filter": "*",
+            "traits": [
+                ("presence", "Which eyelashes are more prominent/existent?"),
+                ("length", "Which eyelashes are longer?"),
+                ("volume", "Which eyelashes are thicker/fuller?")
+            ]
         }
     }
 

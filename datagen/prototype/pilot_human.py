@@ -145,7 +145,7 @@ if __name__ == "__main__":
     except ImportError:
         # Fallback for older versions or different paths if needed
         import sys
-        sys.path.append("/Users/hrishik/Library/Application Support/Blender/5.1/extensions/blender_org/mpfb")
+        sys.path.append(os.path.expanduser("~/Library/Application Support/Blender/5.1/extensions/.user/blender_org/mpfb"))
         from mpfb.services.humanservice import HumanService
 
     basemesh = create_random_human()

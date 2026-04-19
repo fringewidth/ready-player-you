@@ -1,3 +1,4 @@
 *.exr
 datagen/assets/hdris/
 .venv/**
+datagen/rolling_buffer

@@ -122,7 +122,7 @@ if __name__ == "__main__":
         HumanService = __import__(f"{MPFB_BASE}.services.humanservice", fromlist=["HumanService"]).HumanService
     except ImportError:
         import sys
-        sys.path.append("/Users/hrishik/Library/Application Support/Blender/5.1/extensions/blender_org/mpfb")
+        sys.path.append(os.path.expanduser("~/Library/Application Support/Blender/5.1/extensions/.user/blender_org/mpfb"))
         from mpfb.services.humanservice import HumanService
 
     output_dir = "/tmp/renders/sweep_10"
