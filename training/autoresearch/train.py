@@ -22,9 +22,9 @@ class IdentityRegressor(nn.Module):
 
         embed_dim = 768
         self.head = nn.Sequential(
-            nn.Linear(embed_dim * 2, 256),
+            nn.Linear(embed_dim * 2, 128),
             nn.GELU(),
-            nn.Linear(256, output_dim),
+            nn.Linear(128, output_dim),
             nn.Sigmoid()
         )
 
@@ -36,7 +36,7 @@ class IdentityRegressor(nn.Module):
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp06: shallower head 1536->256->36, more steps/min
+LR = 1e-3               # exp07: even shallower head 1536->128->36
 WEIGHT_DECAY = 1e-4
 
 def train():
