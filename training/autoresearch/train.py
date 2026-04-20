@@ -37,8 +37,8 @@ class IdentityRegressor(nn.Module):
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp11: weight_decay=0 (infinite data, no overfitting risk)
-WEIGHT_DECAY = 0.0
+LR = 2e-3               # exp12: lr midpoint between 1e-3 (good) and 3e-3 (bad)
+WEIGHT_DECAY = 1e-4
 
 def train():
     device = torch.device('cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu')
