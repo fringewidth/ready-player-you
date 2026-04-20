@@ -24,7 +24,7 @@ class IdentityRegressor(nn.Module):
         embed_dim = 768
         self.head = nn.Sequential(
             nn.Linear(embed_dim * 2, 128),
-            nn.GELU(),
+            nn.ReLU(),
             nn.Linear(128, output_dim),
             nn.Sigmoid()
         )
@@ -37,7 +37,7 @@ class IdentityRegressor(nn.Module):
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 2e-3               # exp12: lr midpoint between 1e-3 (good) and 3e-3 (bad)
+LR = 1e-3               # exp13: ReLU instead of GELU
 WEIGHT_DECAY = 1e-4
 
 def train():
