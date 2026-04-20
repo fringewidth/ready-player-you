@@ -30,15 +30,15 @@ class IdentityRegressor(nn.Module):
         )
 
     def forward(self, selfie, body):
-        f1 = F.normalize(self.backbone(selfie), dim=-1)
-        f2 = F.normalize(self.backbone(body), dim=-1)
+        f1 = self.backbone(selfie)
+        f2 = self.backbone(body)
         fused = torch.cat((f1, f2), dim=1)
         return self.head(fused)
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp10: L2-norm features before concat, head 1536->128->36
-WEIGHT_DECAY = 1e-4
+LR = 1e-3               # exp11: weight_decay=0 (infinite data, no overfitting risk)
+WEIGHT_DECAY = 0.0
 
 def train():
     device = torch.device('cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu')

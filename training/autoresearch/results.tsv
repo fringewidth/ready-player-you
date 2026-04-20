@@ -8,3 +8,4 @@ exp06	0.063067	903.7	450.0	83	87.0	shallower head 1536->256->36 no LN - NEW BEST
 exp07	0.062660	911.0	447.7	81	86.8	head 1536->128->36 - marginal improvement
 exp08	0.066947	909.2	445.8	81	86.7	head 1536->64->36 too small, underfitting (revert)
 exp09	0.068869	913.8	445.7	82	86.7	Hadamard fusion worse, unstable (revert to concat)
+exp10	0.067551	910.1	448.4	83	86.8	L2-norm features hurt (step1=0.107), revert
