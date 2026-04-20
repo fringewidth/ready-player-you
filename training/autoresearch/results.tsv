@@ -14,3 +14,4 @@ exp12	0.068646	908.3	447.7	81	86.8	lr=2e-3 still noisy, lr=1e-3 confirmed optima
 exp13	KILLED	-	-	-	-	killed early, ReLU test superseded by arch search
 exp14	0.074091	901.2	444.8	78	86.6	linear probe 1536->36 too weak, nonlinearity needed
 exp15	0.064876	909.6	447.7	77	86.8	deeper narrow 1536->128->64->36 worse than 1-layer
+exp16	0.065810	906.7	448.4	76	86.8	LayerNorm at 128 worse, clean head confirmed best
