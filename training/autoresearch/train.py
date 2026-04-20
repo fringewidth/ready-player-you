@@ -39,7 +39,7 @@ class IdentityRegressor(nn.Module):
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp03: revert cosine, stable metric (avg last 10 losses)
+LR = 3e-3               # exp04: 3x lr increase, test faster convergence
 WEIGHT_DECAY = 1e-4
 
 def train():
