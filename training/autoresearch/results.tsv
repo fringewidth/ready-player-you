@@ -5,3 +5,4 @@ exp03	0.064805	908.5	458.6	82	87.5	lr=1e-3 no scheduler, val=avg(last 10 losses)
 exp04	0.070114	904.5	458.6	81	87.5	lr=3e-3 too aggressive, spikes to 0.079 at step 50 (revert)
 exp05	0.066247	901.1	458.6	83	87.5	lr=1e-3 + grad clip norm=1.0 (no improvement, revert)
 exp06	0.063067	903.7	450.0	83	87.0	shallower head 1536->256->36 no LN - NEW BEST
+exp07	0.062660	911.0	447.7	81	86.8	head 1536->128->36 - marginal improvement
