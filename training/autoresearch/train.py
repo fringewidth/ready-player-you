@@ -3,6 +3,7 @@ import time
 import ssl
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 import torch.optim as optim
 from prepare import get_dataloader, get_num_params
 
@@ -22,21 +23,21 @@ class IdentityRegressor(nn.Module):
 
         embed_dim = 768
         self.head = nn.Sequential(
-            nn.Linear(embed_dim, 128),
+            nn.Linear(embed_dim * 2, 128),
             nn.GELU(),
             nn.Linear(128, output_dim),
             nn.Sigmoid()
         )
 
     def forward(self, selfie, body):
-        f1 = self.backbone(selfie)
-        f2 = self.backbone(body)
-        fused = f1 * f2  # Hadamard: element-wise product
+        f1 = F.normalize(self.backbone(selfie), dim=-1)
+        f2 = F.normalize(self.backbone(body), dim=-1)
+        fused = torch.cat((f1, f2), dim=1)
         return self.head(fused)
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp09: Hadamard fusion f1*f2 (768-dim), head 768->128->36
+LR = 1e-3               # exp10: L2-norm features before concat, head 1536->128->36
 WEIGHT_DECAY = 1e-4
 
 def train():
