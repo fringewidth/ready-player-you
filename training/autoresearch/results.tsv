@@ -1,2 +1,3 @@
 experiment_id	val_mse	training_seconds	total_seconds	peak_vram_mb	num_steps	num_params_M	description
 exp01	0.067078	905.0	458.6	76	87.5	lr=1e-3 (3x baseline), frozen backbone, concat head
+exp02	0.067650	901.6	458.6	80	87.5	cosine LR 1e-3->0 T_max=80 (worse, revert)

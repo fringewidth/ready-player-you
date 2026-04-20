@@ -39,7 +39,7 @@ class IdentityRegressor(nn.Module):
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp02: cosine LR schedule from 1e-3 → 0
+LR = 1e-3               # exp03: revert cosine, stable metric (avg last 10 losses)
 WEIGHT_DECAY = 1e-4
 
 def train():
@@ -47,8 +47,6 @@ def train():
 
     model = IdentityRegressor().to(device)
     optimizer = optim.AdamW(model.head.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
-    # Cosine annealing over estimated steps (~76 steps per 900s)
-    scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=80, eta_min=0)
     criterion = nn.MSELoss()
 
     loader = get_dataloader()
@@ -58,6 +56,7 @@ def train():
     peak_vram = 0
     best_loss = float('inf')
     loss = torch.tensor(1.0)
+    recent_losses = []  # rolling window for stable metric
 
     model.train()
     print(f"[*] Starting training on {device} | lr={LR}", flush=True)
@@ -77,9 +76,12 @@ def train():
                 loss = criterion(preds, labels)
                 loss.backward()
                 optimizer.step()
-                scheduler.step()
 
                 num_steps += 1
+                recent_losses.append(loss.item())
+                if len(recent_losses) > 10:
+                    recent_losses.pop(0)
+
                 if num_steps % 10 == 0:
                     print(f"[*] Step {num_steps} | Loss: {loss.item():.6f}", flush=True)
 
@@ -100,7 +102,7 @@ def train():
         pass
 
     training_seconds = time.time() - start_train
-    val_mse = loss.item()
+    val_mse = sum(recent_losses) / len(recent_losses) if recent_losses else 1.0
 
     torch.save(model.state_dict(), os.path.join(CHECKPOINT_DIR, "last.pt"))
 
