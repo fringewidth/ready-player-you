@@ -39,7 +39,8 @@ class IdentityRegressor(nn.Module):
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 3e-3               # exp04: 3x lr increase, test faster convergence
+LR = 1e-3               # exp05: lr=1e-3 + grad clipping to dampen batch spikes
+GRAD_CLIP = 1.0
 WEIGHT_DECAY = 1e-4
 
 def train():
@@ -75,6 +76,7 @@ def train():
                 preds = model(selfies, bodies)
                 loss = criterion(preds, labels)
                 loss.backward()
+                nn.utils.clip_grad_norm_(model.head.parameters(), GRAD_CLIP)
                 optimizer.step()
 
                 num_steps += 1
