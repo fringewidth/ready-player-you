@@ -22,10 +22,7 @@ class IdentityRegressor(nn.Module):
 
         embed_dim = 768
         self.head = nn.Sequential(
-            nn.Linear(embed_dim * 2, 512),
-            nn.LayerNorm(512),
-            nn.GELU(),
-            nn.Linear(512, 256),
+            nn.Linear(embed_dim * 2, 256),
             nn.GELU(),
             nn.Linear(256, output_dim),
             nn.Sigmoid()
@@ -39,8 +36,7 @@ class IdentityRegressor(nn.Module):
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp05: lr=1e-3 + grad clipping to dampen batch spikes
-GRAD_CLIP = 1.0
+LR = 1e-3               # exp06: shallower head 1536->256->36, more steps/min
 WEIGHT_DECAY = 1e-4
 
 def train():
@@ -76,7 +72,6 @@ def train():
                 preds = model(selfies, bodies)
                 loss = criterion(preds, labels)
                 loss.backward()
-                nn.utils.clip_grad_norm_(model.head.parameters(), GRAD_CLIP)
                 optimizer.step()
 
                 num_steps += 1
