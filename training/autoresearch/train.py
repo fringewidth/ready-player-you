@@ -22,21 +22,21 @@ class IdentityRegressor(nn.Module):
 
         embed_dim = 768
         self.head = nn.Sequential(
-            nn.Linear(embed_dim * 2, 64),
+            nn.Linear(embed_dim, 128),
             nn.GELU(),
-            nn.Linear(64, output_dim),
+            nn.Linear(128, output_dim),
             nn.Sigmoid()
         )
 
     def forward(self, selfie, body):
         f1 = self.backbone(selfie)
         f2 = self.backbone(body)
-        fused = torch.cat((f1, f2), dim=1)
+        fused = f1 * f2  # Hadamard: element-wise product
         return self.head(fused)
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp08: even smaller head 1536->64->36
+LR = 1e-3               # exp09: Hadamard fusion f1*f2 (768-dim), head 768->128->36
 WEIGHT_DECAY = 1e-4
 
 def train():
