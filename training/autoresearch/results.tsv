@@ -11,3 +11,4 @@ exp09	0.068869	913.8	445.7	82	86.7	Hadamard fusion worse, unstable (revert to co
 exp10	0.067551	910.1	448.4	83	86.8	L2-norm features hurt (step1=0.107), revert
 exp11	0.068082	905.0	447.7	82	86.8	wd=0 worse, WD helps tame noisy gradients (revert wd=1e-4)
 exp12	0.068646	908.3	447.7	81	86.8	lr=2e-3 still noisy, lr=1e-3 confirmed optimal
+exp13	KILLED	-	-	-	-	killed early, ReLU test superseded by arch search

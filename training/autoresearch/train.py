@@ -23,9 +23,7 @@ class IdentityRegressor(nn.Module):
 
         embed_dim = 768
         self.head = nn.Sequential(
-            nn.Linear(embed_dim * 2, 128),
-            nn.ReLU(),
-            nn.Linear(128, output_dim),
+            nn.Linear(embed_dim * 2, output_dim),
             nn.Sigmoid()
         )
 
@@ -37,7 +35,7 @@ class IdentityRegressor(nn.Module):
 
 # --- 2. Experiment config ---
 TRAIN_TIME_BUDGET = 900  # 15 minutes
-LR = 1e-3               # exp13: ReLU instead of GELU
+LR = 1e-3               # exp14: linear probe 1536->36 (no hidden layer)
 WEIGHT_DECAY = 1e-4
 
 def train():
